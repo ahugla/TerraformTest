@@ -1,6 +1,3 @@
-#   ["un","deux"]
-#
-#
 
 
 variable "vCenterPassword" {
@@ -10,8 +7,7 @@ variable "vCenterPassword" {
 
 
 variable "FolderList" {
-  #type = list(string)
-  type = list
+  type = list(string)
   description = "Nom des Folders"
 }
 
@@ -33,8 +29,6 @@ data "vsphere_datacenter" "my_dc" {
 
 
 resource "vsphere_folder" "folder" {
-  #for_each =  toset(var.FolderList)
-  #path          = "TFdemo/${each.value}"
   count         = length(var.FolderList)
   path          = "TFdemo/${var.FolderList[count.index]}"
   type          = "vm"
