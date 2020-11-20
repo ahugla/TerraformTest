@@ -10,8 +10,7 @@ variable "vCenterPassword" {
 
 
 variable "FolderList" {
-  #type = list(string)
-  type = list
+  type = set(string)
   description = "Nom des Folders"
 }
 
