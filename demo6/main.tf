@@ -4,7 +4,7 @@
 
 
 variable "vCenterPassword" {
-  default = VMware1!
+  default = "VMware1!"
   description = "Password du compte 'admin' de vCenter"
 }
 
